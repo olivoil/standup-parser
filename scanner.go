@@ -102,6 +102,10 @@ func (s *Scanner) scanIdent() (tok Token, lit string) {
 		return YESTERDAY, buf.String()
 	case "FRIDAY/WEEKEND":
 		return YESTERDAY, buf.String()
+	case "PREVIOUSLY":
+		return YESTERDAY, buf.String()
+	case "PREV":
+		return YESTERDAY, buf.String()
 
 	case "MEETING":
 		return MEETINGS, buf.String()

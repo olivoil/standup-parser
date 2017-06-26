@@ -9,27 +9,27 @@ import (
 
 // Statement represents a standup statement.
 type Statement struct {
-	Yesterday StringField
-	Today     StringField
-	Meetings  StringField
-	Blockers  StringField
-	LP        BoolField
-	Jira      BoolField
+	Yesterday StringField `json:"yesterday"`
+	Today     StringField `json:"today"`
+	Meetings  StringField `json:"meetings"`
+	Blockers  StringField `json:"blockers"`
+	LP        BoolField `json:"lp"`
+	Jira      BoolField `json:"jira"`
 }
 
 // StringField is a key/value pair that holds one or several string values
 type StringField struct {
-	Key   string
-	Val   string
-	Valid bool
+	Key   string `json:"key"`
+	Val   string `json:"val"`
+	Valid bool `json:"valid"`
 }
 
 // BoolField is a key/value pair that holds one boolean value
 type BoolField struct {
-	Key   string
-	Val   bool
-	Lit   string
-	Valid bool
+	Key   string `json:"key"`
+	Val   bool `json:"val"`
+	Lit   string `json:"lit"`
+	Valid bool `json:"valid"`
 }
 
 // Parser represents a parser.

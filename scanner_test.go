@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"bitbucket.org/RocksauceStudios/standup-parser"
+	"github.com/olivoil/standup-parser"
 )
 
 // Ensure the scanner can scan tokens correctly.

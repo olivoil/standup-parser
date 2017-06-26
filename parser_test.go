@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"bitbucket.org/RocksauceStudios/standup-parser"
+	"github.com/olivoil/standup-parser"
 	"github.com/davecgh/go-spew/spew"
 )
 
@@ -195,6 +195,41 @@ LP: updated
 					Key:   "LP",
 					Val:   true,
 					Lit:   "updated",
+					Valid: true,
+				},
+			},
+		},
+
+		"John's standup after vacations": {
+			s: `
+Previously:
+- Vacation
+Today:
+- Catch Up
+- Bechtel
+- meetings:  Chris Hearn, PM Team
+LP: updated
+`,
+			stmt: &parser.Statement{
+				Yesterday: parser.StringField{
+					Key: "Previously",
+					Val: "- Vacation",
+					Valid: true,
+				},
+				Today: parser.StringField{
+					Key: "Today",
+					Val: "- Catch Up\n- Bechtel",
+					Valid: true,
+				},
+				Meetings: parser.StringField{
+					Key: "- meetings",
+					Val: "Chris Hearn, PM Team",
+					Valid: true,
+				},
+				LP: parser.BoolField{
+					Key: "LP",
+					Lit: "updated",
+					Val: true,
 					Valid: true,
 				},
 			},
